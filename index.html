@@ -1,40 +1,246 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Luis Felipe Aizza Araujo| Links</title>
-
-<link rel="stylesheet" href="css/style.css">
-
-<meta name="description" content="Página central de links de Luis Felipe Aizza Araujo, Desenvolvedor de software Full Stack.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUIS FELIPE — ADS • HTML, CSS, JS, JAVA &amp; MYSQL</title>
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="Portfólio de Luis Felipe Aizza Araujo — estudante de ADS, desenvolvedor Web, Java e MySQL.">
 </head>
 <body>
 
-<main class="container">
+  <div class="progresso-topo" id="progresso-topo" aria-hidden="true"></div>
 
-<header class="perfil">
-<img class="perfil__foto" src="assets/foto-perfil.jpeg" alt=".">
-<div class="perfil__texto">
-<h1>Luis Felipe Aizza Araujo</h1>
-<p>Desenvolvedor de Software</p>
-</div>
-</header>
+  <header class="topo-incomum">
+    <div class="container-largo topo-incomum__barra">
+      <a href="#topo" class="marca">
+        <span class="marca__selo">LF</span>
+        <span class="marca__nome">LUIS.FELIPE // ADS</span>
+      </a>
 
-<section class="links">
-<h2 class="sr-only">Links Principais</h2> <ul>
-<li><a href="https://github.com/Aizzaxx?tab=repositories" target="_self">Portfólio</a></li>
-<li><a href="https://www.linkedin.com/in/luisfelipe-aizza/" target="_self">Linkedin</a></li>
-<li><a href="https://github.com/Aizzaxx" target="_self">GitHub</a></li>
-<li><a href="contato.html" target="_self">Entre em Contato</a></li>
-</ul>
-</section>
+      <nav class="menu-flutuante" aria-label="Navegação">
+        <a href="#sobre">01. Sobre</a>
+        <a href="#stack">02. Stack</a>
+        <a href="#projetos">03. Projetos</a>
+        <a href="contato.html" class="menu-flutuante__destaque">04. Contato ↗</a>
+      </nav>
+    </div>
+  </header>
 
-<footer class="rodape">
-<p>&copy; 2025 | Desenvolvido por Luis Felipe Aizza Araujo</p>
-</footer>
+  <main id="topo">
+    <!-- HERO ASSIMÉTRICO -->
+    <section class="hero-palestra">
+      <div class="container-largo hero-palestra__grid">
+        <div class="hero-palestra__principal">
+          <div class="faixa-status">
+            <span class="faixa-status__tag">ANÁLISE E DESENVOLVIMENTO DE SISTEMAS</span>
+            <span class="faixa-status__live">● ABERTO A ESTÁGIO &amp; DEV</span>
+          </div>
 
-</main>
+          <h1 class="titulo-impacto">
+            <span>CONSTRUINDO</span>
+            <span class="titulo-impacto__vazado">EM</span>
+            <span class="titulo-impacto__ouro">ADS.</span>
+          </h1>
 
+          <p class="hero-palestra__resumo">
+            Sou <strong>Luis Felipe Aizza Araujo</strong>. Desenvolvo interfaces web em <strong>HTML</strong>, <strong>CSS</strong> e <strong>JavaScript</strong> e estruturo lógica e dados com <strong>Java</strong> e <strong>MySQL</strong>.
+          </p>
+
+          <div class="hero-palestra__botoes">
+            <a href="#projetos" class="btn-campo">Explorar Projetos ↓</a>
+            <a href="contato.html" class="btn-contorno">Chamar para Conversar</a>
+            <a href="https://github.com/Aizzaxx" target="_blank" rel="noopener noreferrer" class="btn-fantasma">GitHub ↗</a>
+            <a href="https://www.linkedin.com/in/luisfelipe-aizza/" target="_blank" rel="noopener noreferrer" class="btn-fantasma">LinkedIn ↗</a>
+          </div>
+        </div>
+
+        <aside class="ficha-tecnica" aria-label="Ficha do desenvolvedor">
+          <div class="ficha-tecnica__topo">
+            <img src="assets/foto-perfil.jpeg" alt="Foto de Luis Felipe Aizza Araujo" class="ficha-tecnica__foto">
+            <div>
+              <span class="ficha-tecnica__rotulo">PLAYER / DEV</span>
+              <h2>Luis Felipe Aizza Araujo</h2>
+              <p>Web • Java • MySQL</p>
+            </div>
+          </div>
+
+          <ul class="ficha-tecnica__metricas">
+            <li>
+              <span class="metrica-chave">FRONT-END</span>
+              <span class="metrica-valor">HTML5 • CSS3 • JS</span>
+            </li>
+            <li>
+              <span class="metrica-chave">BACK-END</span>
+              <span class="metrica-valor">JAVA (POO &amp; LÓGICA)</span>
+            </li>
+            <li>
+              <span class="metrica-chave">DATABASE</span>
+              <span class="metrica-valor">MYSQL (MODELAGEM &amp; SQL)</span>
+            </li>
+            <li>
+              <span class="metrica-chave">FORMAÇÃO</span>
+              <span class="metrica-valor">GRADUAÇÃO EM ADS</span>
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- FAIXA DE MARQUEE / PALAVRAS-CHAVE -->
+    <div class="faixa-corrida" aria-hidden="true">
+      <div class="faixa-corrida__trilho">
+        <span>HTML5</span>
+        <span>✦</span>
+        <span>CSS3</span>
+        <span>✦</span>
+        <span>JAVASCRIPT</span>
+        <span>✦</span>
+        <span>JAVA</span>
+        <span>✦</span>
+        <span>MYSQL</span>
+        <span>✦</span>
+        <span>ANÁLISE E DESENVOLVIMENTO DE SISTEMAS</span>
+        <span>✦</span>
+        <span>HTML5</span>
+        <span>✦</span>
+        <span>CSS3</span>
+        <span>✦</span>
+        <span>JAVASCRIPT</span>
+        <span>✦</span>
+        <span>JAVA</span>
+        <span>✦</span>
+        <span>MYSQL</span>
+        <span>✦</span>
+      </div>
+    </div>
+
+    <!-- 01. SOBRE -->
+    <section id="sobre" class="bloco">
+      <div class="container-largo bloco-sobre">
+        <div class="bloco-sobre__indice">
+          <span class="numero-secao">01 //</span>
+          <h2>DO RASCUNHO — À LÓGICA. — AO SISTEMA..</h2>
+        </div>
+
+        <div class="bloco-sobre__corpo">
+          <p>
+            Cursando <strong>ADS</strong>, encaro cada projeto como um sistema completo: a interface entrega clareza ao usuário com <strong>HTML</strong>, <strong>CSS</strong> e <strong>JavaScript</strong>, enquanto o <strong>Java</strong> organiza regras e responsabilidades e o <strong>MySQL</strong> garante dados coerentes e bem estruturados.
+          </p>
+          <p>
+            Busco ambientes onde eu possa aprender rápido, escrever código limpo, colaborar com o time e transformar problemas reais em soluções funcionais.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02. STACK ESCALONADA -->
+    <section id="stack" class="bloco bloco--escuro">
+      <div class="container-largo">
+        <div class="cabecalho-secao">
+          <span class="numero-secao">02 //</span>
+          <h2>ARSENAL TÉCNICO</h2>
+        </div>
+
+        <div class="pilha-assimetrica">
+          <article class="cartao-escalonado cartao-escalonado--1">
+            <span class="cartao-escalonado__num">CAMADA 01</span>
+            <h3>Interface &amp; Interação — HTML, CSS &amp; JavaScript</h3>
+            <p>Layouts responsivos, semântica, estados visuais, validação de formulários e manipulação de DOM sem enrolação.</p>
+          </article>
+
+          <article class="cartao-escalonado cartao-escalonado--2">
+            <span class="cartao-escalonado__num">CAMADA 02</span>
+            <h3>Lógica &amp; Estrutura — Java</h3>
+            <p>Programação orientada a objetos, modularização, tratamento de erros e construção de aplicações consistentes.</p>
+          </article>
+
+          <article class="cartao-escalonado cartao-escalonado--3">
+            <span class="cartao-escalonado__num">CAMADA 03</span>
+            <h3>Persistência &amp; Dados — MySQL</h3>
+            <p>Modelagem relacional, chaves primárias e estrangeiras, relacionamentos e consultas SQL para armazenar e consultar dados.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03. PROJETOS EM MATRIZ ESCALONADA -->
+    <section id="projetos" class="bloco">
+      <div class="container-largo">
+        <div class="cabecalho-secao cabecalho-secao--flex">
+          <div>
+            <span class="numero-secao">03 //</span>
+            <h2>PROJETOS NO CAMPO</h2>
+          </div>
+
+          <div class="filtros" role="group" aria-label="Filtrar projetos">
+            <button type="button" class="filtro-btn ativo" data-filtro="todos">Todos</button>
+            <button type="button" class="filtro-btn" data-filtro="java">Java</button>
+            <button type="button" class="filtro-btn" data-filtro="web">Web</button>
+          </div>
+        </div>
+
+        <div class="grade-projetos">
+          <article class="card-projeto card-projeto--destaque" data-tecnologias="java mysql">
+            <div class="card-projeto__meta">
+              <span class="pill-verde">JAVA</span>
+              <span class="card-projeto__codigo">PROJ_01</span>
+            </div>
+            <h3>Sistema de Gestão com Java</h3>
+            <p>Coleção de exercícios práticos desenvolvidos em Java com foco em lógica de programação, estruturas de controle e orientação a objetos.</p>
+            <a href="https://github.com/Aizzaxx/Exercicios-Java-2026" target="_blank" rel="noopener noreferrer" class="link-acao">Abrir repositório no GitHub ↗</a>
+          </article>
+
+          <article class="card-projeto" data-tecnologias="html">
+            <div class="card-projeto__meta">
+              <span class="pill-ouro">HTML</span>
+              <span class="card-projeto__codigo">PROJ_02</span>
+            </div>
+            <h3>Interfaces Web Responsivas</h3>
+            <p>Landing page responsiva e moderna desenvolvida com estrutura semântica em HTML5, estilização personalizada em CSS3 e interatividade em JavaScript.</p>
+            <a href="https://github.com/Aizzaxx/Programa-de-Extensao" target="_blank" rel="noopener noreferrer" class="link-acao">Ver no GitHub ↗</a>
+          </article>
+
+          <article class="card-projeto" data-tecnologias="web">
+            <div class="card-projeto__meta">
+              <span class="pill-verde">HTML • CSS • JS</span>
+              <span class="card-projeto__codigo">PROJ_03</span>
+            </div>
+            <h3>Interfaces Web Responsivas</h3>
+            <p>Aplicação web interativa que consome a API do Pokémon (PokéAPI) via JavaScript para buscar e exibir dados e estatísticas em tempo real.</p>
+            <a href="https://github.com/Aizzaxx/API-pokemon" target="_blank" rel="noopener noreferrer" class="link-acao">Ver no GitHub ↗</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04. CTA FINAL -->
+    <section class="bloco bloco--cta">
+      <div class="container-largo chamada-final">
+        <div>
+          <span class="numero-secao">04 // PRÓXIMO LANCE</span>
+          <h2>TEM VAGA, ESTÁGIO OU PROJETO EM MENTE?</h2>
+          <p>Manda mensagem direta ou conecta no LinkedIn para trocarmos ideia.</p>
+        </div>
+        <div class="chamada-final__acoes">
+          <a href="contato.html" class="btn-campo">Ir para Contato ↗</a>
+          <a href="https://www.linkedin.com/in/luisfelipe-aizza/" target="_blank" rel="noopener noreferrer" class="btn-contorno">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape-final">
+    <div class="container-largo rodape-final__linha">
+      <p>&copy; <span id="ano-atual">2026</span> LUIS FELIPE AIZZA ARAUJO — ADS</p>
+      <div class="rodape-final__links">
+        <a href="https://github.com/Aizzaxx" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/luisfelipe-aizza/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="contato.html">Contato</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
