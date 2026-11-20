@@ -1,377 +1,843 @@
-/* 1. Reset e Variáveis Globais (Boas Práticas) */
-
+/* 1. VARIÁVEIS — VERDE ESTILO PALMEIRAS + DOURADO + GRAFITE VERDE */
 :root {
-
-    --cor-fundo: #121212;
-
-    --cor-container: #383838;
-
-    --cor-texto-primario: #FFFFFF;
-
-    --cor-texto-secundario: #A7A7A7;
-
-    --cor-acento: #3fc733;
-
-    --cor-acento-hover: #3fc733;
-
+  --bg-escuro: #051009;
+  --bg-bloco: #09190f;
+  --bg-card: #0d2215;
+  --bg-card-alto: #13311e;
+  --verde-palmeiras: #006437;
+  --verde-vivo: #16a34a;
+  --verde-neon: #22c55e;
+  --ouro-escudo: #eab308;
+  --ouro-suave: rgba(234, 179, 8, 0.14);
+  --verde-suave: rgba(34, 197, 94, 0.14);
+  --borda: rgba(134, 239, 172, 0.16);
+  --borda-forte: rgba(34, 197, 94, 0.55);
+  --texto: #f2fbf5;
+  --texto-sec: #9ec2aa;
+  --texto-mutado: #638a70;
+  --texto-botao: #041409;
+  --erro: #ff6b6b;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --sans: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
 }
 
- 
-
-* {
-
-    margin: 0;
-
-    padding: 0;
-
-    box-sizing: border-box;
-
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
- 
-
-/* 2. Estilos do Corpo da Página (Layout Centralizado) */
+html {
+  scroll-behavior: smooth;
+}
 
 body {
-
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
-    background-color: var(--cor-fundo);
-
-    color: var(--cor-texto-primario);
-
-   
-
-    /* Usamos Flexbox para centralizar nosso container na tela */
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    min-height: 100vh;
-
-    padding: 20px;
-
+  font-family: var(--sans);
+  background-color: var(--bg-escuro);
+  color: var(--texto);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
 }
 
- 
-
-/* 3. Estilos do Container Principal */
-
-.container {
-
-    width: 100%;
-
-    max-width: 600px;
-
-    background-color: var(--cor-container);
-
-    padding: 30px;
-
-    border-radius: 16px;
-
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-
-    text-align: center;
-
+main {
+  flex: 1;
 }
 
- 
-
-/* 4. Estilos do Cabeçalho (Perfil) */
-
-.perfil {
-
-    margin-bottom: 30px;
-
+.container-largo {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 24px;
 }
 
- 
-
-.perfil__foto {
-
-    width: 120px;
-
-    height: 120px;
-
-    border-radius: 50%; /* Deixa a imagem redonda */
-
-    border: 3px solid var(--cor-acento);
-
-    object-fit: cover; /* Garante que a imagem não fique distorcida */
-
-    margin-bottom: 15px;
-
+/* Barra de Progresso no Topo */
+.progresso-topo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--verde-neon), var(--ouro-escudo));
+  z-index: 200;
+  transition: width 0.08s linear;
 }
 
- 
-
-.perfil__texto h1 {
-
-    font-size: 1.8rem;
-
-    margin-bottom: 5px;
-
+/* 2. TOPO INCOMUM */
+.topo-incomum {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(5, 16, 9, 0.86);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--borda);
 }
 
- 
-
-.perfil__texto p {
-
-    font-size: 1rem;
-
-    color: var(--cor-texto-secundario);
-
+.topo-incomum__barra {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  gap: 16px;
 }
 
- 
-
-/* 5. Estilos da Seção de Links */
-
-.links ul {
-
-    list-style: none; /* Remove os pontos da lista */
-
+.marca {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--texto);
 }
 
- 
-
-.links li {
-
-    margin-bottom: 15px;
-
+.marca__selo {
+  display: inline-grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, var(--verde-palmeiras), var(--verde-vivo));
+  color: #ffffff;
+  border: 1px solid var(--ouro-escudo);
+  font-family: var(--mono);
+  font-weight: 800;
+  font-size: 0.85rem;
+  transform: skewX(-10deg);
 }
 
- 
-
-.links a {
-
-    display: block;
-
-    background-color: var(--cor-acento);
-
-    color: var(--cor-texto-primario);
-
-    padding: 15px;
-
-    text-decoration: none;
-
-    font-weight: bold;
-
-    border-radius: 8px;
-
-    transition: background-color 0.3s ease, transform 0.2s ease;
-
+.marca__nome {
+  font-family: var(--mono);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
 }
 
- 
-
-.links a:hover {
-
-    background-color: var(--cor-acento-hover);
-
-    transform: scale(1.03); /* Efeito sutil de crescimento */
-
+.menu-flutuante {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
- 
-
-/* 6. Estilos do Rodapé */
-
-.rodape {
-
-    margin-top: 30px;
-
-    font-size: 0.8rem;
-
-    color: var(--cor-texto-secundario);
-
+.menu-flutuante a {
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  color: var(--texto-sec);
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
- 
-
-/* 7. Classe de Acessibilidade */
-
-.sr-only {
-
-    position: absolute;
-
-    width: 1px;
-
-    height: 1px;
-
-    padding: 0;
-
-    margin: -1px;
-
-    overflow: hidden;
-
-    clip: rect(0, 0, 0, 0);
-
-    white-space: nowrap;
-
-    border-width: 0;
-
+.menu-flutuante a:hover {
+  color: var(--verde-neon);
 }
 
- 
-
-/* ================================================= */
-
-/* 5. NOVOS ESTILOS PARA A PÁGINA DE CONTATO         */
-
-/* ================================================= */
-
-.contact-form-section h2 {
-
-    font-size: 1.5rem;
-
-    color: var(--cor-texto-primario);
-
-    margin-bottom: 0.5rem;
-
+.menu-flutuante .menu-flutuante__destaque {
+  background-color: var(--ouro-suave);
+  color: var(--ouro-escudo);
+  border: 1px solid rgba(234, 179, 8, 0.45);
+  padding: 7px 14px;
+  font-weight: 700;
 }
 
-.contact-intro {
-
-    color: var(--cor-texto-secundario);
-
-    margin-bottom: 2rem;
-
+.menu-flutuante .menu-flutuante__destaque:hover {
+  background-color: var(--ouro-escudo);
+  color: #111305;
 }
 
-.form-group {
-
-    margin-bottom: 1.5rem;
-
-    text-align: left;
-
+/* 3. HERO ASSIMÉTRICO */
+.hero-palestra {
+  padding: 68px 0 76px;
+  background:
+    radial-gradient(circle at 80% 15%, rgba(22, 163, 74, 0.22), transparent 48%),
+    radial-gradient(circle at 15% 85%, rgba(234, 179, 8, 0.09), transparent 42%),
+    var(--bg-escuro);
+  border-bottom: 1px solid var(--borda);
 }
 
-.form-group label {
-
-    display: block;
-
-    margin-bottom: 0.5rem;
-
-    font-size: 0.9rem;
-
-    color: var(--cor-texto-secundario);
-
+.hero-palestra__grid {
+  display: grid;
+  grid-template-columns: 1.3fr 0.85fr;
+  gap: 44px;
+  align-items: center;
 }
 
-.form-group input,
-
-.form-group textarea {
-
-    width: 100%;
-
-    padding: 0.75rem;
-
-    background-color: var(--cor-fundo);
-
-    border: 1px solid #444;
-
-    border-radius: 6px;
-
-    color: var(--cor-texto-primario);
-
-    font-size: 1rem;
-
-    transition: border-color 0.2s ease;
-
+.faixa-status {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
-.form-group input:focus,
-
-.form-group textarea:focus {
-
-    outline: none;
-
-    border-color: var(--cor-acento);
-
+.faixa-status__tag {
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--ouro-escudo);
+  background-color: var(--ouro-suave);
+  border: 1px solid rgba(234, 179, 8, 0.35);
+  padding: 5px 10px;
+  letter-spacing: 0.05em;
 }
 
-.form-group textarea {
-
-    resize: vertical;
-
-    min-height: 100px;
-
+.faixa-status__live {
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--verde-neon);
 }
 
-.btn {
-
-    display: block;
-
-    width: 100%;
-
-    background-color: var(--cor-acento);
-
-    color: var(--cor-texto-primario);
-
-    padding: 15px;
-
-    text-decoration: none;
-
-    font-weight: bold;
-
-    border-radius: 8px;
-
-    border: none;
-
-    cursor: pointer;
-
-    font-size: 1rem;
-
-    transition: background-color 0.3s ease, transform 0.2s ease;
-
+.titulo-impacto {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 14px;
+  font-size: clamp(2.8rem, 6.2vw, 4.9rem);
+  font-weight: 900;
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+  transform: skewX(-4deg);
+  margin-bottom: 24px;
 }
 
-.btn:hover {
-
-    background-color: var(--cor-acento-hover);
-
-    transform: scale(1.02);
-
+.titulo-impacto__vazado {
+  color: transparent;
+  -webkit-text-stroke: 2px var(--verde-neon);
 }
 
- 
-
-/* 6. Estilos do Rodapé (Adição de um estilo de link) */
-
-.rodape {
-
-    margin-top: 30px;
-
-    font-size: 0.8rem;
-
-    color: var(--cor-texto-secundario);
-
+.titulo-impacto__ouro {
+  color: var(--ouro-escudo);
 }
 
-.rodape p {
-
-    margin-top: 10px;
-
+.hero-palestra__resumo {
+  font-size: 1.06rem;
+  color: var(--texto-sec);
+  max-width: 580px;
+  margin-bottom: 28px;
 }
 
-.nav-link {
-
-    color: var(--cor-acento);
-
-    text-decoration: none;
-
-    font-weight: bold;
-
+.hero-palestra__resumo strong {
+  color: var(--texto);
 }
 
-.nav-link:hover {
-
-    text-decoration: underline;
-
+.hero-palestra__botoes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
 }
 
+.btn-campo,
+.btn-contorno,
+.btn-fantasma {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-campo {
+  background-color: var(--verde-vivo);
+  color: var(--texto-botao);
+  border: 1px solid var(--verde-neon);
+  padding: 13px 22px;
+  clip-path: polygon(0 0, 94% 0, 100% 28%, 100% 100%, 6% 100%, 0 72%);
+}
+
+.btn-campo:hover {
+  background-color: var(--verde-neon);
+  transform: translateY(-2px);
+}
+
+.btn-contorno {
+  background-color: transparent;
+  color: var(--texto);
+  border: 1px solid var(--borda-forte);
+  padding: 13px 20px;
+}
+
+.btn-contorno:hover {
+  background-color: var(--verde-suave);
+  border-color: var(--verde-neon);
+}
+
+.btn-fantasma {
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  color: var(--texto-sec);
+  padding: 10px 12px;
+}
+
+.btn-fantasma:hover {
+  color: var(--ouro-escudo);
+}
+
+.btn-bloco {
+  width: 100%;
+}
+
+/* Ficha Técnica Lateral */
+.ficha-tecnica {
+  background: linear-gradient(165deg, var(--bg-card) 0%, #07160d 100%);
+  border: 1px solid var(--borda-forte);
+  padding: 24px;
+  position: relative;
+  box-shadow: 10px 10px 0 var(--verde-palmeiras);
+}
+
+.ficha-tecnica__topo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-bottom: 18px;
+  margin-bottom: 18px;
+  border-bottom: 1px dashed var(--borda);
+}
+
+.ficha-tecnica__foto {
+  width: 76px;
+  height: 76px;
+  object-fit: cover;
+  border: 2px solid var(--ouro-escudo);
+  clip-path: polygon(10% 0, 100% 0, 100% 88%, 90% 100%, 0 100%, 0 12%);
+  flex-shrink: 0;
+}
+
+.ficha-tecnica__rotulo {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--ouro-escudo);
+  letter-spacing: 0.08em;
+}
+
+.ficha-tecnica__topo h2 {
+  font-size: 1.08rem;
+  margin-top: 2px;
+}
+
+.ficha-tecnica__topo p {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--verde-neon);
+}
+
+.ficha-tecnica__metricas {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ficha-tecnica__metricas li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(134, 239, 172, 0.08);
+}
+
+.ficha-tecnica__metricas li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.metrica-chave {
+  color: var(--texto-mutado);
+}
+
+.metrica-valor {
+  color: var(--texto);
+  font-weight: 700;
+  text-align: right;
+}
+
+/* 4. FAIXA EM MOVIMENTO */
+.faixa-corrida {
+  background-color: var(--verde-palmeiras);
+  color: #ffffff;
+  border-top: 1px solid var(--ouro-escudo);
+  border-bottom: 1px solid var(--ouro-escudo);
+  padding: 10px 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.faixa-corrida__trilho {
+  display: inline-flex;
+  gap: 24px;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  animation: deslizar 22s linear infinite;
+}
+
+@keyframes deslizar {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* 5. BLOCOS E SEÇÕES */
+.bloco {
+  padding: 84px 0;
+}
+
+.bloco--escuro {
+  background-color: var(--bg-bloco);
+  border-top: 1px solid var(--borda);
+  border-bottom: 1px solid var(--borda);
+}
+
+.numero-secao {
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--ouro-escudo);
+  margin-bottom: 10px;
+}
+
+.cabecalho-secao {
+  margin-bottom: 36px;
+}
+
+.cabecalho-secao h2 {
+  font-size: clamp(1.6rem, 3vw, 2.3rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.cabecalho-secao--flex {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Sobre */
+.bloco-sobre {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 44px;
+  align-items: start;
+}
+
+.bloco-sobre__indice h2 {
+  font-size: clamp(1.5rem, 2.8vw, 2.1rem);
+  font-weight: 800;
+  line-height: 1.18;
+}
+
+.bloco-sobre__corpo p {
+  color: var(--texto-sec);
+  font-size: 1.02rem;
+  margin-bottom: 16px;
+}
+
+.bloco-sobre__corpo p:last-child {
+  margin-bottom: 0;
+}
+
+.bloco-sobre__corpo strong {
+  color: var(--verde-neon);
+}
+
+/* Pilha Assimétrica de Stack */
+.pilha-assimetrica {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.cartao-escalonado {
+  background-color: var(--bg-card);
+  border: 1px solid var(--borda);
+  border-left: 4px solid var(--verde-neon);
+  padding: 24px 28px;
+  max-width: 820px;
+  transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.cartao-escalonado:hover {
+  background-color: var(--bg-card-alto);
+  border-color: var(--verde-neon);
+  transform: translateX(6px);
+}
+
+.cartao-escalonado--2 {
+  margin-left: auto;
+  border-left-color: var(--ouro-escudo);
+}
+
+.cartao-escalonado--3 {
+  margin-left: 8%;
+}
+
+.cartao-escalonado__num {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--ouro-escudo);
+  letter-spacing: 0.08em;
+}
+
+.cartao-escalonado h3 {
+  font-size: 1.15rem;
+  margin: 4px 0 8px;
+}
+
+.cartao-escalonado p {
+  color: var(--texto-sec);
+  font-size: 0.95rem;
+}
+
+/* Filtros e Projetos */
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filtro-btn {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  background-color: var(--bg-card);
+  color: var(--texto-sec);
+  border: 1px solid var(--borda);
+  padding: 8px 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filtro-btn:hover {
+  color: var(--texto);
+  border-color: var(--verde-neon);
+}
+
+.filtro-btn.ativo {
+  background-color: var(--verde-vivo);
+  color: var(--texto-botao);
+  border-color: var(--verde-neon);
+}
+
+.grade-projetos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.card-projeto {
+  background-color: var(--bg-card);
+  border: 1px solid var(--borda);
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.card-projeto:hover {
+  border-color: var(--verde-neon);
+  transform: translateY(-3px);
+}
+
+.card-projeto--destaque {
+  grid-column: span 2;
+  background: linear-gradient(125deg, var(--bg-card-alto) 0%, var(--bg-card) 100%);
+  border-color: var(--borda-forte);
+}
+
+.card-projeto.oculto {
+  display: none;
+}
+
+.card-projeto__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.pill-verde,
+.pill-ouro {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 10px;
+}
+
+.pill-verde {
+  background-color: var(--verde-suave);
+  color: var(--verde-neon);
+  border: 1px solid var(--borda-forte);
+}
+
+.pill-ouro {
+  background-color: var(--ouro-suave);
+  color: var(--ouro-escudo);
+  border: 1px solid rgba(234, 179, 8, 0.4);
+}
+
+.card-projeto__codigo {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--texto-mutado);
+}
+
+.card-projeto h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.card-projeto p {
+  color: var(--texto-sec);
+  font-size: 0.94rem;
+  margin-bottom: 18px;
+}
+
+.link-acao {
+  font-family: var(--mono);
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--ouro-escudo);
+  text-decoration: none;
+}
+
+.link-acao:hover {
+  text-decoration: underline;
+}
+
+/* CTA Final */
+.bloco--cta {
+  padding-top: 20px;
+}
+
+.chamada-final {
+  background: linear-gradient(100deg, var(--verde-palmeiras) 0%, #0b2616 70%, var(--bg-card) 100%);
+  border: 1px solid var(--ouro-escudo);
+  padding: 40px 36px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.chamada-final h2 {
+  font-size: clamp(1.4rem, 2.6vw, 2rem);
+  font-weight: 900;
+  margin-bottom: 6px;
+}
+
+.chamada-final p {
+  color: var(--texto);
+  opacity: 0.9;
+}
+
+.chamada-final__acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* 6. PÁGINA DE CONTATO */
+.contato-area__grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.15fr;
+  gap: 44px;
+  align-items: start;
+}
+
+.titulo-contato {
+  font-size: clamp(1.9rem, 3.8vw, 2.8rem);
+  font-weight: 900;
+  line-height: 1.08;
+  margin-bottom: 14px;
+}
+
+.contato-area__lado-esquerdo p {
+  color: var(--texto-sec);
+  margin-bottom: 24px;
+}
+
+.canais-rapidos {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.canal-box {
+  background-color: var(--bg-card);
+  border: 1px solid var(--borda);
+  padding: 16px 18px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.canal-box:hover {
+  border-color: var(--ouro-escudo);
+  transform: translateX(4px);
+}
+
+.canal-box span {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--ouro-escudo);
+}
+
+.canal-box strong {
+  font-family: var(--mono);
+  font-size: 0.9rem;
+  color: var(--texto);
+}
+
+.formulario-painel {
+  background-color: var(--bg-card);
+  border: 1px solid var(--borda-forte);
+  padding: 30px;
+}
+
+.campo-grupo {
+  margin-bottom: 18px;
+}
+
+.campo-grupo label {
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--verde-neon);
+  margin-bottom: 7px;
+  text-transform: uppercase;
+}
+
+.campo-grupo input,
+.campo-grupo textarea {
+  width: 100%;
+  padding: 12px 14px;
+  background-color: var(--bg-escuro);
+  border: 1px solid var(--borda);
+  color: var(--texto);
+  font-family: var(--sans);
+  font-size: 0.95rem;
+}
+
+.campo-grupo input:focus,
+.campo-grupo textarea:focus {
+  outline: none;
+  border-color: var(--ouro-escudo);
+}
+
+.campo-grupo textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.mensagem-erro {
+  display: block;
+  color: var(--erro);
+  font-family: var(--mono);
+  font-size: 0.76rem;
+  margin-top: 5px;
+  min-height: 1.1em;
+}
+
+.feedback-formulario {
+  margin-top: 14px;
+  font-family: var(--mono);
+  font-size: 0.84rem;
+  color: var(--verde-neon);
+  text-align: center;
+}
+
+/* 7. RODAPÉ */
+.rodape-final {
+  border-top: 1px solid var(--borda);
+  background-color: var(--bg-bloco);
+  padding: 22px 0;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--texto-mutado);
+}
+
+.rodape-final__linha {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.rodape-final__links {
+  display: flex;
+  gap: 18px;
+}
+
+.rodape-final__links a {
+  color: var(--texto-sec);
+  text-decoration: none;
+}
+
+.rodape-final__links a:hover {
+  color: var(--ouro-escudo);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--ouro-escudo);
+  outline-offset: 2px;
+}
+
+/* 8. RESPONSIVIDADE */
+@media (max-width: 920px) {
+  .hero-palestra__grid,
+  .bloco-sobre,
+  .contato-area__grid,
+  .grade-projetos {
+    grid-template-columns: 1fr;
+  }
+
+  .card-projeto--destaque {
+    grid-column: span 1;
+  }
+
+  .cartao-escalonado--2,
+  .cartao-escalonado--3 {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .menu-flutuante a:not(.menu-flutuante__destaque) {
+    display: none;
+  }
+
+  .titulo-impacto {
+    transform: none;
+  }
+
+  .ficha-tecnica {
+    box-shadow: 6px 6px 0 var(--verde-palmeiras);
+  }
+
+  .bloco {
+    padding: 56px 0;
+  }
+}
  
